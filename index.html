@@ -603,21 +603,17 @@ function shareKakao(){
     Kakao.Share.sendDefault({
       objectType:'feed',
       content:{
-        title:'연봉 '+fmt(r.annual)+'원 → 이번 달 실수령 '+fmt(r.take)+'원',
-        description:'실수령 '+r.tr.toFixed(1)+'% | 4대보험 '+r.ir.toFixed(1)+'% | 소득세 '+r.xr.toFixed(1)+'%\n'+(r.totalAW>0?'수당 '+fmt(r.totalAW)+'원 포함 · ':'')+'국세청 간이세액표 · 2026년',
-        imageUrl:'https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png',
+        title:'연봉 '+fmt(r.annual)+'원 → 월 실수령 '+fmt(r.take)+'원',
+        description:'실수령 '+r.tr.toFixed(1)+'%'+(r.totalAW>0?' · 수당 '+fmt(r.totalAW)+'원 포함':''),
+        imageUrl:'https://ej-cyber-rip.github.io/salary-calcualator/icon.png',
+        imageWidth:300,
+        imageHeight:300,
         link:{mobileWebUrl:PAGE_URL,webUrl:PAGE_URL}
       },
-      itemContent:{
-        items:[
-          {item:'국민연금',itemOp:'-'+fmt(r.pension)+'원'},
-          {item:'건강보험+장기요양',itemOp:'-'+fmt(r.health+r.ltc)+'원'},
-          {item:'고용보험',itemOp:'-'+fmt(r.employ)+'원'},
-          {item:'소득세+지방세',itemOp:'-'+fmt(r.ttax)+'원'},
-          ...(r.totalAW>0?[{item:'수당 합계',itemOp:'+'+fmt(r.totalAW)+'원'}]:[]),
-        ]
-      },
-      buttons:[{title:'나도 계산해보기',link:{mobileWebUrl:PAGE_URL,webUrl:PAGE_URL}}]
+      buttons:[{
+        title:'나도 계산해보기',
+        link:{mobileWebUrl:PAGE_URL,webUrl:PAGE_URL}
+      }]
     });
   }catch(e){showToast('오류: '+e.message);}
 }
