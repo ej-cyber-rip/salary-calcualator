@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>연봉 계산기 2026 | 실수령액 계산</title>
+<title>연봉 실수령액 계산기 2026 | 4대보험·소득세 자동 계산</title>
+<meta name="description" content="연봉을 입력하면 국민연금·건강보험·고용보험·소득세를 차감한 실수령액을 바로 계산해드려요. 수당까지 반영 가능.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ej-cyber-rip.github.io/salary-calcualator">
+<meta property="og:title" content="연봉 실수령액 계산기 2026">
+<meta property="og:description" content="4대보험·소득세·수당까지 한 번에. 국세청 간이세액표 646구간 직접 적용.">
+<meta property="og:image" content="https://ej-cyber-rip.github.io/salary-calcualator/og-thumbnail.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ej-cyber-rip.github.io/salary-calcualator/og-thumbnail.png">
 <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js" integrity="sha384-TiCUE00h649CAMonG018J2ujOgDKW/kVWlChEuu4jK2vxfAAD0eZxzCKakxg55G4" crossorigin="anonymous"></script>
 <style>
@@ -605,9 +615,9 @@ function shareKakao(){
       content:{
         title:'연봉 '+fmt(r.annual)+'원 → 월 실수령 '+fmt(r.take)+'원',
         description:'실수령 '+r.tr.toFixed(1)+'%'+(r.totalAW>0?' · 수당 '+fmt(r.totalAW)+'원 포함':''),
-        imageUrl:'https://ej-cyber-rip.github.io/salary-calcualator/icon.png',
-        imageWidth:300,
-        imageHeight:300,
+        imageUrl:'https://ej-cyber-rip.github.io/salary-calcualator/og-thumbnail.png',
+        imageWidth:1200,
+        imageHeight:630,
         link:{mobileWebUrl:PAGE_URL,webUrl:PAGE_URL}
       },
       buttons:[{
